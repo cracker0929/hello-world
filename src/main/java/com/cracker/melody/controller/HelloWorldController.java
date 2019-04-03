@@ -1,5 +1,7 @@
 package com.cracker.melody.controller;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.cracker.melody.model.User;
 import com.cracker.melody.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +18,12 @@ import java.util.List;
       @Autowired
       private UserService userServiceImplment;
         @RequestMapping("/hello")
-        public List<User> index() {
-            return userServiceImplment.getAll();
+        public List<User> hello() {
+           /* Wrapper<User> wrapper = new EntityWrapper<>();
+            ((EntityWrapper<User>) wrapper).setEntity(new User());*/
+            List<User> list= userServiceImplment.getUserList(null
+            );
+            return list;
         }
     }
 

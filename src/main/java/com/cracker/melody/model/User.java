@@ -1,57 +1,55 @@
 package com.cracker.melody.model;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
+
+@TableName
 public class User {
-    private long userId;
-    private String userName;
-    private String userTruename;
-    private Integer userAge;
-    private String adderss;
+    @TableId(type = IdType.AUTO)
+    private long user_id;
+    private String user_name;
+    private String user_truename;
+    private Integer user_age;
+    private String address;
 
-    public long getUserId() {
-        return userId;
+    public long getUser_id() {
+        return user_id;
     }
 
-    public String getUserName() {
-        return userName;
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
     }
 
-    public String getUserTruename() {
-        return userTruename;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public Integer getUserAge() {
-        return userAge;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
-    public String getAdderss() {
-        return adderss;
+    public String getUser_truename() {
+        return user_truename;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setUser_truename(String user_truename) {
+        this.user_truename = user_truename;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public Integer getUser_age() {
+        return user_age;
     }
 
-    public void setUserTruename(String userTruename) {
-        this.userTruename = userTruename;
+    public void setUser_age(Integer user_age) {
+        this.user_age = user_age;
     }
 
-    public void setUserAge(Integer userAge) {
-        this.userAge = userAge;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdderss(String adderss) {
-        this.adderss = adderss;
-    }
-
-    public User(long userId, String userName, String userTruename, Integer userAge, String adderss) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userTruename = userTruename;
-        this.userAge = userAge;
-        this.adderss = adderss;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
